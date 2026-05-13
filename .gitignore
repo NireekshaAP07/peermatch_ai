@@ -1,8 +1,13 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Root .gitignore for PeerMatch AI
 
-# dependencies
-/node_modules
-/.pnp
+# Dependencies
+node_modules/
+venv/
+.venv/
+env/
+__pycache__/
+*.pyc
+.pnp
 .pnp.*
 .yarn/*
 !.yarn/patches
@@ -10,32 +15,41 @@
 !.yarn/releases
 !.yarn/versions
 
-# testing
-/coverage
+# Testing
+coverage/
 
-# next.js
-/.next/
-/out/
+# Build outputs
+.next/
+dist/
+build/
+out/
+*.tsbuildinfo
+next-env.d.ts
 
-# production
-/build
+# Database
+*.db
+*.sqlite3
 
-# misc
-.DS_Store
-*.pem
-
-# debug
+# Logs and PID
+*.log
+*.pid
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
+# IDEs
+.vscode/
+.idea/
+.DS_Store
+*.pem
+
+# Environment variables
 .env*
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
-# vercel
+# Vercel
 .vercel
-
-# typescript
-*.tsbuildinfo
-next-env.d.ts
